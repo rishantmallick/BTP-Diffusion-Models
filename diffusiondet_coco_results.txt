@@ -1,0 +1,20 @@
+DiffusionDet COCO Evaluation
+============================
+
+Model:
+diffdet_coco_res50.pth
+
+Dataset:
+COCO 2017 validation set (val2017)
+Number of images: 5000
+
+Task:
+bbox
+
+Results:
+AP   = 45.7758
+AP50 = 65.3998
+AP75 = 49.3336
+APs  = 27.7821
+APm  = 48.3233
+APl  = 61.7353

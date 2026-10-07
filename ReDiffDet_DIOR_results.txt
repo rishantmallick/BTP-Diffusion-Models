@@ -1,0 +1,18 @@
+ReDiffDet / GSDet Baseline - DIOR-R Evaluation
+
+Dataset: DIOR-R
+Checkpoint: epoch_24.pth
+Config: GSDet_r50_b900_h2h4_h2r1_r2r1_2x_dior.py
+
+Test Images: 11,738
+
+Results:
+mAP   = 0.5905  (59.05%)
+AP50  = 0.6970  (69.70%)
+AP75  = 0.4840  (48.40%)
+
+Inference Time:
+0.2118 seconds/image
+
+GPU:
+NVIDIA GeForce RTX 3050 A Laptop GPU
