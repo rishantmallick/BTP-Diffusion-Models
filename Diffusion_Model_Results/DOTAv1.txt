@@ -1,0 +1,16 @@
+This is your evaluation result for task 1 (VOC metrics):
+
+mAP: 0.7393730897307424
+ap of each class: plane:0.8838053681105537, baseball-diamond:0.7931841929886159, bridge:0.5162377555413389, ground-track-field:0.7252723122386991, small-vehicle:0.787855973312163, large-vehicle:0.8345779517050579, ship:0.8825330358146455, tennis-court:0.9079108126248108, basketball-court:0.8361566797522598, storage-tank:0.8059337536537655, soccer-ball-field:0.5590493195231119, roundabout:0.579711018773823, harbor:0.743098129221492, swimming-pool:0.6852557009925718, helicopter:0.5500143417082269
+COCO style result:
+
+AP50: 0.7393730897307424
+AP75: 0.5230496227660139
+mAP: 0.4762306255565094
+The submitted information is :
+
+Description: good to go
+Username: Rishant_mallick
+Institute: Indian_Institute_of_Technology_Kharagpur
+Emailadress: rishantmallick06@kgpian.iitkgp.ac.in
+TeamMembers: Dr_Debashis_sen

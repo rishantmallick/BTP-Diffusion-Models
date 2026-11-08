@@ -1,0 +1,40 @@
+\nBOAT-ONLY
+Predictions: 5213
+mAP (AP50:95): 0.041012
+AP50: 0.073294
+AP55: 0.064417
+AP60: 0.060572
+AP65: 0.050937
+AP70: 0.042750
+AP75: 0.036626
+AP80: 0.030949
+AP85: 0.023696
+AP90: 0.016456
+AP95: 0.010427
+\nALL CLASSES (CLASS-AGNOSTIC)
+Predictions: 108222
+mAP (AP50:95): 0.051868
+AP50: 0.087980
+AP55: 0.076774
+AP60: 0.073428
+AP65: 0.065308
+AP70: 0.057743
+AP75: 0.051284
+AP80: 0.041635
+AP85: 0.033440
+AP90: 0.022385
+AP95: 0.008699
+
+Report saved to: outputs_hrsc_test_standard/HRSC2016_class_comparison_results.txt
+
+
+
+|  AP   |  AP50  |  AP75  |  APs  |  APm  |  APl  |
+|:-----:|:------:|:------:|:-----:|:-----:|:-----:|
+| 0.613 | 1.578  | 0.417  |  nan  | 0.198 | 2.915 |
+[10/25 14:05:10 d2.evaluation.coco_evaluation]: Some metrics cannot be computed and is shown as NaN.
+[10/25 14:05:10 d2.engine.defaults]: Evaluation results for hrsc2016_test in csv format:
+[10/25 14:05:10 d2.evaluation.testing]: copypaste: Task: bbox
+[10/25 14:05:10 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/25 14:05:10 d2.evaluation.testing]: copypaste: 0.6126,1.5781,0.4173,nan,0.1980,2.9150
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$

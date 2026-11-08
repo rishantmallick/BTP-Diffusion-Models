@@ -1,0 +1,91 @@
+Here is the complete validation table, including APs, APm, and APl, from your HRSC2016 training log.
+
+| Epoch (approx.) | Iteration | AP (%) | AP50 (%) | AP75 (%) | APs (%) | APm (%) | APl (%) |
+| --------------- | --------- | ------ | -------- | -------- | ------- | ------- | ------- |
+| 2.5             | 1,089     | 81.790 | 93.676   | 87.912   | NaN     | 55.334  | 83.763  |
+| 5               | 2,179     | 84.163 | 94.433   | 89.684   | NaN     | 59.914  | 85.748  |
+| 7.5             | 3,269     | 85.425 | 95.255   | 90.873   | NaN     | 62.272  | 87.008  |
+| 10              | 4,359     | 86.426 | 96.342   | 91.810   | NaN     | 60.643  | 87.968  |
+| 12.5            | 5,449     | 85.918 | 95.526   | 91.921   | NaN     | 62.496  | 87.575  |
+
+Important notes:
+
+- APs = NaN at every checkpoint because the evaluator could not compute AP for small objects in the defined COCO size range. It does not mean APs is zero.
+- APm is AP for medium-sized objects, and APl is AP for large objects.
+- The best overall AP so far is 86.426% at approximately 10 epochs, at iteration 4,359.
+- These are validation results using horizontal bounding boxes (HBB), not oriented bounding boxes (OBB).
+
+
+Here are the HRSC2016 test-set inference results at each checkpoint, extracted from your uploaded terminal log.
+
+| Epoch (approx.) | Iteration | AP (%)  | AP50 (%) | AP75 (%) | APs (%) | APm (%) | APl (%) |
+| --------------- | --------- | ------- | -------- | -------- | ------- | ------- | ------- |
+| 2.5             | 1,089     | 78.9550 | 92.0576  | 85.9194  | NaN     | 43.9650 | 81.6269 |
+| 5.0             | 2,179     | 82.3373 | 93.9734  | 88.2470  | NaN     | 51.6265 | 84.4338 |
+| 7.5             | 3,269     | 83.5419 | 94.8196  | 89.9346  | NaN     | 52.4464 | 85.7174 |
+| 10.0            | 4,359     | 84.3892 | 94.9283  | 90.5782  | NaN     | 53.8800 | 86.6134 |
+| 12.5            | 5,449     | 83.7664 | 94.8634  | 89.7367  | NaN     | 56.4713 | 85.7978 |
+
+Pasted text(20261025-123155).txt
+
+## What the results tell us
+
+- Best overall AP: 84.3892% at approximately 10 epochs.
+- Best AP50: 94.9283% at approximately 10 epochs.
+- Best AP75: 90.5782% at approximately 10 epochs.
+- Best APm: 56.4713% at approximately 12.5 epochs.
+- Best APl: 86.6134% at approximately 10 epochs.
+- APs = NaN: the evaluator could not calculate small-object AP; this does not mean AP is zero.
+
+The test AP improves from 78.9550% at 2.5 epochs to 84.3892% at 10 epochs, then decreases by about 0.623 percentage points at 12.5 epochs.
+
+Conclusion: The 10-epoch checkpoint (`model_0004359.pth`) has the best overall test AP among the five evaluated checkpoints. This agrees with the validation results, where it also had the highest overall AP. These are HBB results, so they should not be directly compared with oriented-bounding-box benchmarks.
+
+How is the loss changing?
+Iteration	Total loss
+19	17.82
+179	4.907
+399	4.258
+599	4.134
+739	2.598
+859	3.208
+
+
+I checked your uploaded training log. The validation results for the later checkpoints are:
+
+| Epochs | Iteration checkpoint | AP (%)  | AP50 (%) | AP75 (%) | APm (%) | APl (%) |
+| ------ | -------------------- | ------- | -------- | -------- | ------- | ------- |
+| 15     | `model_0006539.pth`  | 86.0437 | 95.3453  | 91.9608  | 63.7043 | 87.5492 |
+| 17.5   | `model_0007629.pth`  | 86.0041 | 95.0170  | 91.4782  | 58.4884 | 87.9958 |
+| 20     | `model_0008719.pth`  | 85.8842 | 94.8800  | 91.0816  | 60.9542 | 87.7917 |
+| 22.5   | `model_0009809.pth`  | 86.0731 | 94.8834  | 91.4121  | 60.6269 | 87.9689 |
+| 25     | `model_0010899.pth`  | 85.7674 | 94.8303  | 90.6370  | 60.6646 | 87.7004 |
+
+
+Best validation AP among these five checkpoints: 22.5 epochs, at iteration 9809, with 86.0731% AP.
+
+`APs` was `NaN` for these evaluations because the evaluator could not compute the small-object metric; it does not mean zero.
+
+
+Here are the HRSC2016 test-set evaluation results for all five checkpoints, evaluated on 453 test images containing 1,228 ground-truth boxes.
+
+| Epochs | Iteration | AP (%)  | AP50 (%) | AP75 (%) | APm (%) | APl (%) |
+| ------ | --------- | ------- | -------- | -------- | ------- | ------- |
+| 15     | 6,539     | 83.8449 | 94.6019  | 90.2673  | 55.4486 | 85.8686 |
+| 17.5   | 7,629     | 83.8991 | 94.4106  | 89.8617  | 54.3581 | 86.4483 |
+| 20     | 8,719     | 84.1925 | 94.2290  | 90.7152  | 56.5653 | 86.6608 |
+| 22.5   | 9,809     | 84.5384 | 94.4492  | 90.9847  | 56.1524 | 87.0772 |
+| 25     | 10,899    | 84.4688 | 94.4234  | 90.7618  | 56.4812 | 86.9604 |
+
+AP = mean average precision over IoU thresholds 0.50–0.95; AP50 and AP75 use individual IoU thresholds. APm and APl refer to medium and large objects. APs is NaN because small-object AP could not be computed.
+
+## Key findings
+
+- Best overall test AP: 22.5 epochs, checkpoint `model_0009809.pth`, with 84.5384% AP.
+- Best AP75: 22.5 epochs, at 90.9847%.
+- Best medium-object AP: 25 epochs, at 56.4812%.
+- Best large-object AP: 22.5 epochs, at 87.0772%.
+
+The overall AP increases through 22.5 epochs, then drops slightly at 25 epochs. The final checkpoint is therefore not the best-performing one on this test set.
+
+Important: Select the checkpoint using validation AP, not test AP. Your best validation checkpoint was iteration 4,359 (10 epochs), with validation AP of 86.4263%. The test results above are useful for final reporting, but repeatedly choosing checkpoints based on test performance would bias the evaluation.

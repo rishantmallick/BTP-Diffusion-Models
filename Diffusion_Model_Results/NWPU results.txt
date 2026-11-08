@@ -1,0 +1,243 @@
+Baseline
+[10/26 20:43:36 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|  AP   |  AP50  |  AP75  |  APs  |  APm  |  APl  |
+|:-----:|:------:|:------:|:-----:|:-----:|:-----:|
+| 0.048 | 0.092  | 0.034  | 0.010 | 0.178 | 0.013 |
+[10/26 20:43:36 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category           | AP    | category     | AP    | category         | AP    |
+|:-------------------|:------|:-------------|:------|:-----------------|:------|
+| airplane           | 0.006 | ship         | 0.248 | storage_tank     | 0.006 |
+| baseball_diamond   | 0.010 | tennis_court | 0.000 | basketball_court | 0.007 |
+| ground_track_field | 0.000 | harbor       | 0.006 | bridge           | 0.000 |
+| vehicle            | 0.198 |              |       |                  |       |
+[10/26 20:43:36 d2.engine.defaults]: Evaluation results for nwpu_vhr10_test in csv format:
+[10/26 20:43:36 d2.evaluation.testing]: copypaste: Task: bbox
+[10/26 20:43:36 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/26 20:43:36 d2.evaluation.testing]: copypaste: 0.0481,0.0922,0.0340,0.0101,0.1785,0.0134
+
+
+5th epoch
+
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$
+
+[10/26 21:14:46 d2.evaluation.fast_eval_api]: Evaluate annotation type *bbox*
+[10/26 21:14:46 d2.evaluation.fast_eval_api]: COCOeval_opt.evaluate() finished in 0.09 seconds.
+[10/26 21:14:46 d2.evaluation.fast_eval_api]: Accumulating evaluation results...
+[10/26 21:14:46 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 0.03 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.542
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.854
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.611
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.480
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.481
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.645
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.248
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.582
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.626
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.489
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.559
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.694
+[10/26 21:14:46 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| 54.211 | 85.385 | 61.086 | 47.962 | 48.103 | 64.523 |
+[10/26 21:14:46 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category           | AP     | category     | AP     | category         | AP     |
+|:-------------------|:-------|:-------------|:-------|:-----------------|:-------|
+| airplane           | 65.450 | ship         | 58.480 | storage_tank     | 22.672 |
+| baseball_diamond   | 69.518 | tennis_court | 51.805 | basketball_court | 60.963 |
+| ground_track_field | 82.199 | harbor       | 47.129 | bridge           | 30.710 |
+| vehicle            | 53.189 |              |        |                  |        |
+[10/26 21:14:46 d2.engine.defaults]: Evaluation results for nwpu_vhr10_test in csv format:
+[10/26 21:14:46 d2.evaluation.testing]: copypaste: Task: bbox
+[10/26 21:14:46 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/26 21:14:46 d2.evaluation.testing]: copypaste: 54.2114,85.3845,61.0863,47.9622,48.1026,64.5228
+
+
+Here are the per-class AP results and overall evaluation metrics for NWPU VHR-10, epochs 1–4, extracted from your evaluation logs. All four checkpoints were evaluated on the same 130-image test set.
+
+## 1. Per-class AP for epochs 1–4
+
+All values are AP in percentage points.
+
+| Class              | Epoch 1 | Epoch 2 | Epoch 3 | Epoch 4 |
+| ------------------ | ------- | ------- | ------- | ------- |
+| Airplane           | 61.945  | 64.265  | 64.059  | 65.517  |
+| Ship               | 57.530  | 56.977  | 58.744  | 58.444  |
+| Storage tank       | 18.674  | 22.824  | 27.238  | 15.794  |
+| Baseball diamond   | 65.376  | 67.933  | 65.326  | 68.843  |
+| Tennis court       | 40.105  | 43.380  | 49.210  | 53.719  |
+| Basketball court   | 17.371  | 47.407  | 48.740  | 55.112  |
+| Ground track field | 75.284  | 78.730  | 78.802  | 80.187  |
+| Harbor             | 3.481   | 18.185  | 23.507  | 39.275  |
+| Bridge             | 4.410   | 9.341   | 13.732  | 21.681  |
+| Vehicle            | 33.883  | 51.179  | 52.040  | 54.730  |
+
+Source: Per-category bbox AP tables in your uploaded evaluation logs.&#x20;
+
+Pasted text(20261026-212118).txt
+
+Pasted text(20261026-212118).txt
+
+
+
+## 2. Overall evaluation results
+
+| Metric             | Epoch 1 | Epoch 2 | Epoch 3 | Epoch 4 |
+| ------------------ | ------- | ------- | ------- | ------- |
+| AP (IoU 0.50:0.95) | 37.806  | 46.022  | 48.140  | 51.330  |
+| AP50               | 60.769  | 74.330  | 78.030  | 79.883  |
+| AP75               | 41.834  | 51.446  | 53.135  | 57.727  |
+| AP small (APs)     | 42.538  | 43.283  | 48.478  | 46.307  |
+| AP medium (APm)    | 35.327  | 43.126  | 44.421  | 45.412  |
+| AP large (APl)     | 34.402  | 49.397  | 55.031  | 63.606  |
+
+Source: Overall bbox evaluation tables in your uploaded logs.&#x20;
+
+Pasted text(20261026-212118).txt
+
+Pasted text(20261026-212118).txt
+
+
+
+## 3. Improvement across epochs
+
+Overall AP across training epochs
+
+COCO-style AP at IoU 0.50:0.95, in percentage points.
+
+APAP50AP75
+
+02550751001234
+
+Source: Your NWPU VHR-10 evaluation logs.
+
+- Epoch 1 → 2: AP increased by 8.216 points.
+- Epoch 2 → 3: AP increased by 2.118 points.
+- Epoch 3 → 4: AP increased by 3.190 points.
+- Total improvement: AP increased from 37.806 to 51.330, a gain of 13.524 percentage points.
+
+Epoch 4 has the highest overall AP among these four checkpoints. Harbor and bridge AP also improve substantially over training, although storage-tank AP drops at epoch 4.
+
+Important: Your existing epoch-5 evaluation reached AP 54.211, AP50 85.385, and AP75 61.086. Thus, epoch 5 remains the best overall checkpoint among epochs 1–5 based on the reported AP.
+
+
+0.5 epoch
+|   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| 31.301 | 52.756 | 32.032 | 34.287 | 29.099 | 29.796 |
+[10/26 21:26:58 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category           | AP     | category     | AP     | category         | AP     |
+|:-------------------|:-------|:-------------|:-------|:-----------------|:-------|
+| airplane           | 57.948 | ship         | 42.001 | storage_tank     | 40.364 |
+| baseball_diamond   | 54.551 | tennis_court | 13.096 | basketball_court | 1.070  |
+| ground_track_field | 67.058 | harbor       | 0.000  | bridge           | 0.234  |
+| vehicle            | 36.688 |              |        |                  |        |
+[10/26 21:26:58 d2.engine.defaults]: Evaluation results for nwpu_vhr10_test in csv format:
+[10/26 21:26:58 d2.evaluation.testing]: copypaste: Task: bbox
+[10/26 21:26:58 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/26 21:26:58 d2.evaluation.testing]: copypaste: 31.3012,52.7561,32.0323,34.2874,29.0987,29.7957
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$
+Overall detection metrics
+All values below are percentages.
+Metric	Epoch 6	Epoch 7	Epoch 8	Epoch 9	Epoch 10
+AP (mAP)	57.0984	56.8925	59.1234	57.8766	59.0655
+AP50	86.9376	86.4633	92.4386	88.3557	90.7563
+AP75	63.9271	64.0143	67.6444	66.9295	67.6213
+AP small	41.6337	45.7501	52.9921	46.8812	44.8471
+AP medium	50.7477	51.0712	52.2811	51.2937	52.3348
+AP large	69.0372	67.6075	69.3333	68.6905	69.1555
+
+Source: The five COCO evaluation summaries and their corresponding copypaste results.
+
+
+Per-class Average Precision
+This is particularly useful for understanding how the model performs on the ten NWPU VHR-10 object categories.
+Category	Epoch 6	Epoch 7	Epoch 8	Epoch 9	Epoch 10
+Airplane	68.607	67.918	67.680	67.263	67.675
+Ship	60.889	63.482	62.854	60.449	62.262
+Storage tank	20.872	17.609	33.569	17.080	27.497
+Baseball diamond	71.287	69.202	70.516	72.634	73.649
+Tennis court	57.957	57.056	56.117	61.089	59.401
+Basketball court	70.621	70.349	65.484	68.687	69.347
+Ground track field	84.600	78.501	82.318	84.431	85.219
+Harbor	47.010	51.088	54.927	51.954	52.804
+Bridge	33.624	32.129	37.873	36.683	37.603
+Vehicle	55.517	61.591	59.896	58.495	55.197
+
+
+2. Overall detection performance
+The following table summarizes the evaluation after each additional epoch.
+Metric (%)	Epoch 11	Epoch 12	Epoch 13
+AP (mAP)	58.5714	58.4526	59.4883
+AP50	88.3842	88.0227	92.2197
+AP75	67.3229	66.3725	65.2093
+AP small	41.4521	41.7822	50.7684
+AP medium	51.8319	50.8293	52.6512
+AP large	71.0560	71.0589	68.9874
+
+Best overall mAP: 59.4883 at epoch 13.
+
+
+4. Category-wise Average Precision
+The following table shows the AP for each of the ten NWPU VHR-10 categories.
+Category	Epoch 11	Epoch 12	Epoch 13
+Airplane	69.137	67.744	67.894
+Ship	61.105	65.280	62.455
+Storage tank	19.499	17.325	32.645
+Baseball diamond	73.758	68.481	70.453
+Tennis court	56.578	54.094	58.583
+Basketball court	67.704	66.134	61.826
+Ground track field	87.133	86.734	85.474
+Harbor	50.583	54.920	52.873
+Bridge	37.737	40.476	41.672
+Vehicle	62.478	63.339	61.008
+
+2. Overall evaluation results: epochs 14–20
+Here are the COCO evaluation metrics for all seven epochs.
+Metric (%)	Epoch 14	Epoch 15	Epoch 16	Epoch 17	Epoch 18	Epoch 19	Epoch 20
+AP (mAP)	58.16	58.52	61.76	58.78	59.40	61.41	61.14
+AP50	88.13	88.47	94.68	88.88	90.92	90.91	92.89
+AP75	65.01	64.35	69.21	65.43	67.57	69.71	67.75
+AP small	41.78	41.10	53.16	46.58	43.57	41.94	39.63
+AP medium	50.44	50.70	54.01	51.49	51.80	54.36	55.37
+AP large	68.46	69.51	71.06	69.50	70.05	72.91	69.15
+
+
+4. Per-category AP
+This is particularly useful for understanding which object categories benefit from the additional fine-tuning.
+Category	E14	E15	E16	E17	E18	E19	E20
+Airplane	66.53	66.26	68.80	68.02	66.73	71.70	70.53
+Ship	62.80	61.64	62.84	61.37	60.79	63.98	60.71
+Storage tank	18.80	17.49	34.68	19.67	25.26	25.22	33.34
+Baseball diamond	72.42	68.92	72.94	73.13	71.23	73.02	73.67
+Tennis court	57.00	56.04	58.50	57.78	56.72	62.02	61.14
+Basketball court	64.55	68.48	71.69	67.15	67.38	72.89	69.89
+Ground track field	87.15	86.66	85.66	87.63	86.81	86.88	86.65
+Harbor	49.43	53.68	52.26	54.33	55.03	53.89	55.65
+Bridge	42.96	41.75	45.68	37.57	41.55	38.93	34.68
+Vehicle	59.92	64.33	64.59	61.19	62.46	65.60	65.15
+
+
+Metric (%)	Epoch 21	Epoch 22	Epoch 23	Epoch 24	Epoch 25
+AP (mAP)	59.640	59.005	60.465	59.843	59.628
+AP50	88.763	88.713	92.823	88.880	92.176
+AP75	66.511	64.893	66.409	66.658	64.916
+AP small	41.881	41.634	42.682	41.584	43.926
+AP medium	52.305	51.217	53.326	53.090	53.334
+AP large	70.494	71.431	70.945	71.194	69.303
+
+
+
+3. Per-category AP
+The NWPU VHR-10 dataset contains ten object categories.
+Category	E21	E22	E23	E24	E25
+Airplane	69.411	65.959	68.546	66.810	66.173
+Ship	63.630	59.508	60.056	62.999	58.102
+Storage tank	20.793	20.055	32.810	23.463	27.635
+Baseball diamond	71.786	67.159	73.408	73.979	73.675
+Tennis court	58.770	57.201	55.429	55.629	57.352
+Basketball court	71.712	71.438	68.777	71.641	74.488
+Ground track field	86.515	87.041	85.832	85.630	85.405
+Harbor	52.125	54.957	53.068	54.793	54.174
+Bridge	39.626	40.937	39.969	37.836	36.057
+Vehicle	62.036	65.795	66.750	65.654	63.219

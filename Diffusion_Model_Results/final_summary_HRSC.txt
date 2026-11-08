@@ -1,0 +1,36 @@
+ReDet HRSC2016 evaluation results
+================================
+Images evaluated: 444
+Ground-truth objects per IoU table: 1228
+Detections per IoU table: 1344
+
+Final summary metrics (rounded by the test runner):
+mAP: 0.7232
+AP50: 0.904
+AP55: 0.904
+AP60: 0.903
+AP65: 0.901
+AP70: 0.901
+AP75: 0.895
+AP80: 0.796
+AP85: 0.678
+AP90: 0.328
+AP95: 0.023
+data_time: 0.0025
+time: 0.1786
+
+Per-IoU detailed metrics:
+IoU | Metric | Recall | AP | AP (%)
+0.50 | AP50 | 0.97638 | 0.90405 | 90.405
+0.55 | AP55 | 0.97476 | 0.90405 | 90.405
+0.60 | AP60 | 0.97068 | 0.90307 | 90.307
+0.65 | AP65 | 0.95928 | 0.90104 | 90.104
+0.70 | AP70 | 0.95358 | 0.90067 | 90.067
+0.75 | AP75 | 0.92752 | 0.89506 | 89.506
+0.80 | AP80 | 0.86971 | 0.79554 | 79.554
+0.85 | AP85 | 0.75814 | 0.67799 | 67.799
+0.90 | AP90 | 0.48453 | 0.32812 | 32.812
+0.95 | AP95 | 0.08795 | 0.02273 | 2.273
+
+Caution:
+Results are from the provided run log. The log shows checkpoint/model state-dict mismatches and data_prefix.sub_data_root='FullDataSet/'; therefore these should not be reported as a validated official HRSC2016 test benchmark without resolving those issues.

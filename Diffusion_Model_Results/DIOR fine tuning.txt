@@ -1,0 +1,393 @@
+train/val results
+
+
+|   AP   |  AP50  |  AP75  |  APs  |  APm   |  APl   |
+|:------:|:------:|:------:|:-----:|:------:|:------:|
+| 53.391 | 74.493 | 57.801 | 7.215 | 32.817 | 64.133 |
+[10/25 18:47:39 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP     | category                | AP     | category        | AP     |
+|:------------------------|:-------|:------------------------|:-------|:----------------|:-------|
+| Expressway-Service-area | 53.850 | Expressway-toll-station | 60.479 | airplane        | 73.347 |
+| airport                 | 53.738 | baseballfield           | 81.942 | basketballcourt | 64.356 |
+| bridge                  | 22.896 | chimney                 | 73.905 | dam             | 30.490 |
+| golffield               | 47.446 | groundtrackfield        | 73.258 | harbor          | 21.481 |
+| overpass                | 38.994 | ship                    | 44.367 | stadium         | 78.778 |
+| storagetank             | 66.813 | tenniscourt             | 83.836 | trainstation    | 21.331 |
+| vehicle                 | 42.718 | windmill                | 33.793 |                 |        |
+[10/25 18:47:40 d2.engine.defaults]: Evaluation results for dior_trainval in csv format:
+[10/25 18:47:40 d2.evaluation.testing]: copypaste: Task: bbox
+[10/25 18:47:40 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/25 18:47:40 d2.evaluation.testing]: copypaste: 53.3909,74.4927,57.8007,7.2146,32.8175,64.1330
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$
+
+
+Test Results after 1 epoch 
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.383
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.584
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.408
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.081
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.314
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.563
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.253
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.470
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.522
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.174
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.472
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.706
+[10/25 19:54:55 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|   AP   |  AP50  |  AP75  |  APs  |  APm   |  APl   |
+|:------:|:------:|:------:|:-----:|:------:|:------:|
+| 38.329 | 58.437 | 40.807 | 8.075 | 31.449 | 56.314 |
+[10/25 19:54:55 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP     | category                | AP     | category        | AP     |
+|:------------------------|:-------|:------------------------|:-------|:----------------|:-------|
+| Expressway-Service-area | 35.529 | Expressway-toll-station | 38.679 | airplane        | 45.509 |
+| airport                 | 44.036 | baseballfield           | 60.787 | basketballcourt | 58.873 |
+| bridge                  | 10.934 | chimney                 | 54.447 | dam             | 20.438 |
+| golffield               | 37.905 | groundtrackfield        | 55.579 | harbor          | 17.478 |
+| overpass                | 24.985 | ship                    | 40.820 | stadium         | 47.142 |
+| storagetank             | 39.747 | tenniscourt             | 64.908 | trainstation    | 15.731 |
+| vehicle                 | 24.384 | windmill                | 28.673 |                 |        |
+[10/25 19:54:55 d2.engine.defaults]: Evaluation results for dior_test in csv format:
+[10/25 19:54:55 d2.evaluation.testing]: copypaste: Task: bbox
+[10/25 19:54:55 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/25 19:54:55 d2.evaluation.testing]: copypaste: 38.3292,58.4375,40.8071,8.0748,31.4494,56.3143
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$
+
+
+After 2 epochs
+[10/26 14:50:33 d2.evaluation.fast_eval_api]: Evaluate annotation type *bbox*
+[10/26 14:50:44 d2.evaluation.fast_eval_api]: COCOeval_opt.evaluate() finished in 11.50 seconds.
+[10/26 14:50:45 d2.evaluation.fast_eval_api]: Accumulating evaluation results...
+[10/26 14:50:49 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 4.34 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.420
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.631
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.450
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.099
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.332
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.607
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.271
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.496
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.552
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.211
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.499
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.732
+[10/26 14:50:49 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|   AP   |  AP50  |  AP75  |  APs  |  APm   |  APl   |
+|:------:|:------:|:------:|:-----:|:------:|:------:|
+| 41.960 | 63.063 | 44.972 | 9.868 | 33.178 | 60.725 |
+[10/26 14:50:49 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP     | category                | AP     | category        | AP     |
+|:------------------------|:-------|:------------------------|:-------|:----------------|:-------|
+| Expressway-Service-area | 41.636 | Expressway-toll-station | 41.658 | airplane        | 50.315 |
+| airport                 | 46.699 | baseballfield           | 61.075 | basketballcourt | 64.026 |
+| bridge                  | 14.734 | chimney                 | 58.208 | dam             | 25.357 |
+| golffield               | 43.945 | groundtrackfield        | 57.541 | harbor          | 23.669 |
+| overpass                | 27.050 | ship                    | 43.598 | stadium         | 55.160 |
+| storagetank             | 38.988 | tenniscourt             | 67.526 | trainstation    | 17.387 |
+| vehicle                 | 25.812 | windmill                | 34.808 |                 |        |
+[10/26 14:50:50 d2.engine.defaults]: Evaluation results for dior_test in csv format:
+[10/26 14:50:50 d2.evaluation.testing]: copypaste: Task: bbox
+[10/26 14:50:50 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/26 14:50:50 d2.evaluation.testing]: copypaste: 41.9597,63.0630,44.9724,9.8678,33.1780,60.7246
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$
+
+
+Baseline 
+[10/26 15:37:02 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 4.46 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.003
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.003
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.002
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.008
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.008
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.001
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.015
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.007
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.029
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.041
+[10/26 15:37:02 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|  AP   |  AP50  |  AP75  |  APs  |  APm  |  APl  |
+|:-----:|:------:|:------:|:-----:|:-----:|:-----:|
+| 0.317 | 0.557  | 0.327  | 0.200 | 0.764 | 0.804 |
+[10/26 15:37:02 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP    | category                | AP    | category        | AP    |
+|:------------------------|:------|:------------------------|:------|:----------------|:------|
+| Expressway-Service-area | 0.001 | Expressway-toll-station | 0.001 | airplane        | 0.002 |
+| airport                 | 0.000 | baseballfield           | 0.021 | basketballcourt | 0.000 |
+| bridge                  | 0.000 | chimney                 | 0.000 | dam             | 0.000 |
+| golffield               | 0.000 | groundtrackfield        | 0.000 | harbor          | 0.001 |
+| overpass                | 0.000 | ship                    | 0.243 | stadium         | 0.000 |
+| storagetank             | 6.074 | tenniscourt             | 0.000 | trainstation    | 0.000 |
+| vehicle                 | 0.000 | windmill                | 0.000 |                 |       |
+[10/26 15:37:02 d2.engine.defaults]: Evaluation results for dior_test in csv format:
+[10/26 15:37:02 d2.evaluation.testing]: copypaste: Task: bbox
+[10/26 15:37:02 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/26 15:37:02 d2.evaluation.testing]: copypaste: 0.3172,0.5575,0.3272,0.2000,0.7636,0.8043
+
+After 1.5 epochs
+[10/26 16:14:07 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 3.35 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.409
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.620
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.435
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.094
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.329
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.592
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.267
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.492
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.547
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.210
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.494
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.724
+[10/26 16:14:07 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|   AP   |  AP50  |  AP75  |  APs  |  APm   |  APl   |
+|:------:|:------:|:------:|:-----:|:------:|:------:|
+| 40.903 | 61.958 | 43.501 | 9.383 | 32.868 | 59.226 |
+[10/26 16:14:07 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP     | category                | AP     | category        | AP     |
+|:------------------------|:-------|:------------------------|:-------|:----------------|:-------|
+| Expressway-Service-area | 35.463 | Expressway-toll-station | 40.449 | airplane        | 49.158 |
+| airport                 | 46.284 | baseballfield           | 60.754 | basketballcourt | 62.005 |
+| bridge                  | 13.541 | chimney                 | 55.212 | dam             | 22.372 |
+| golffield               | 43.650 | groundtrackfield        | 56.862 | harbor          | 21.228 |
+| overpass                | 28.830 | ship                    | 43.084 | stadium         | 55.119 |
+| storagetank             | 40.731 | tenniscourt             | 66.728 | trainstation    | 18.050 |
+| vehicle                 | 25.152 | windmill                | 33.390 |                 |        |
+[10/26 16:14:07 d2.engine.defaults]: Evaluation results for dior_test in csv format:
+[10/26 16:14:07 d2.evaluation.testing]: copypaste: Task: bbox
+[10/26 16:14:07 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/26 16:14:07 d2.evaluation.testing]: copypaste: 40.9030,61.9582,43.5009,9.3826,32.8678,59.2259
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/r
+epo$
+
+After 2.5 epochs 
+on results...
+[10/26 18:27:09 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 3.44 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.429
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.642
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.459
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.099
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.337
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.614
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.276
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.499
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.554
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.220
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.497
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.731
+[10/26 18:27:09 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|   AP   |  AP50  |  AP75  |  APs  |  APm   |  APl   |
+|:------:|:------:|:------:|:-----:|:------:|:------:|
+| 42.861 | 64.242 | 45.905 | 9.932 | 33.727 | 61.352 |
+[10/26 18:27:09 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP     | category                | AP     | category        | AP     |
+|:------------------------|:-------|:------------------------|:-------|:----------------|:-------|
+| Expressway-Service-area | 40.869 | Expressway-toll-station | 41.382 | airplane        | 50.351 |
+| airport                 | 50.668 | baseballfield           | 61.267 | basketballcourt | 64.598 |
+| bridge                  | 15.785 | chimney                 | 58.012 | dam             | 27.550 |
+| golffield               | 49.680 | groundtrackfield        | 57.770 | harbor          | 25.526 |
+| overpass                | 28.675 | ship                    | 43.575 | stadium         | 51.278 |
+| storagetank             | 41.002 | tenniscourt             | 68.296 | trainstation    | 17.736 |
+| vehicle                 | 26.344 | windmill                | 36.860 |                 |        |
+
+After 3 epochs
+[10/26 18:55:14 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 3.40 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.446
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.664
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.476
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.105
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.363
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.634
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.281
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.511
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.566
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.236
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.742
+[10/26 18:55:14 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| 44.560 | 66.432 | 47.632 | 10.500 | 36.294 | 63.416 |
+[10/26 18:55:14 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP     | category                | AP     | category        | AP     |
+|:------------------------|:-------|:------------------------|:-------|:----------------|:-------|
+| Expressway-Service-area | 46.270 | Expressway-toll-station | 45.498 | airplane        | 50.184 |
+| airport                 | 49.019 | baseballfield           | 63.582 | basketballcourt | 65.070 |
+| bridge                  | 17.691 | chimney                 | 60.410 | dam             | 29.417 |
+| golffield               | 47.307 | groundtrackfield        | 59.157 | harbor          | 27.628 |
+| overpass                | 31.644 | ship                    | 43.855 | stadium         | 56.167 |
+| storagetank             | 42.345 | tenniscourt             | 69.433 | trainstation    | 26.293 |
+| vehicle                 | 27.500 | windmill                | 32.724 |                 |        |
+[10/26 18:55:14 d2.engine.defaults]: Evaluation results for dior_test in csv format:
+[10/26 18:55:14 d2.evaluation.testing]: copypaste: Task: bbox
+[10/26 18:55:14 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/26 18:55:14 d2.evaluation.testing]: copypaste: 44.5598,66.4324,47.6317,10.5003,36.2936,63.4159
+ 
+
+for 3.5 epoch vs 4 epoch
+## 1. Overall results: half epoch vs one epoch
+
+Both checkpoints were evaluated on the `dior_test` split.
+
+| Metric    | Half epoch | One epoch | Improvement |
+| --------- | ---------- | --------- | ----------- |
+| AP / mAP  | 44.9629    | 45.4766   | +0.5137     |
+| AP50      | 67.0710    | 67.5089   | +0.4379     |
+| AP75      | 48.1157    | 48.8293   | +0.7136     |
+| AP small  | 10.7966    | 11.8474   | +1.0508     |
+| AP medium | 35.5957    | 36.6478   | +1.0521     |
+| AP large  | 64.2107    | 64.2336   | +0.0229     |
+
+All AP values are on a 0–100 scale. The one-epoch checkpoint improves every reported AP metric, particularly small- and medium-object detection.
+
+## 2. Full per-class AP results
+
+The table below contains the per-category bounding-box AP reported in your logs, with the change calculated as one epoch minus half epoch.
+
+| DIOR class              | Half epoch AP | One epoch AP | Change |
+| ----------------------- | ------------- | ------------ | ------ |
+| Expressway-Service-area | 45.095        | 49.601       | +4.506 |
+| Expressway-toll-station | 44.885        | 45.513       | +0.628 |
+| Airplane                | 50.054        | 52.598       | +2.544 |
+| Airport                 | 54.584        | 51.325       | −3.259 |
+| Baseballfield           | 60.459        | 63.489       | +3.030 |
+| Basketballcourt         | 67.100        | 67.100       | 0.000  |
+| Bridge                  | 17.859        | 18.739       | +0.880 |
+| Chimney                 | 59.377        | 60.556       | +1.179 |
+| Dam                     | 32.461        | 31.004       | −1.457 |
+| Golffield               | 49.583        | 47.625       | −1.958 |
+| Groundtrackfield        | 60.766        | 59.215       | −1.551 |
+| Harbor                  | 27.960        | 30.750       | +2.790 |
+| Overpass                | 30.339        | 32.533       | +2.194 |
+| Ship                    | 44.524        | 43.834       | −0.690 |
+| Stadium                 | 56.798        | 57.575       | +0.777 |
+| Storagetank             | 40.704        | 42.049       | +1.345 |
+| Tenniscourt             | 69.715        | 70.585       | +0.870 |
+| Trainstation            | 22.594        | 24.978       | +2.384 |
+| Vehicle                 | 27.400        | 28.278       | +0.878 |
+| Windmill                | 37.000        | 32.184       | −4.816 |
+
+Pasted text(20261027-065547).txt
+
+## 3. Full COCO-style evaluation metrics
+
+The evaluation logs also report average recall (AR), which measures how many ground-truth objects are recovered.
+
+| Metric            | Half epoch | One epoch |
+| ----------------- | ---------- | --------- |
+| AR @ maxDets=1    | 0.288      | 0.286     |
+| AR @ maxDets=10   | 0.515      | 0.518     |
+| AR @ maxDets=100  | 0.571      | 0.573     |
+| AR small objects  | 0.227      | 0.245     |
+| AR medium objects | 0.502      | 0.524     |
+| AR large objects  | 0.752      | 0.748     |
+
+These AR values are on a 0–1 scale. For example, AR @ maxDets=100 is 57.1% for the half-epoch checkpoint and 57.3% for the one-epoch checkpoint.&#x20;
+
+Pasted text(20261027-065547).txt
+
+Pasted text(20261027-065547).txt
+
+
+
+## 4. Training details
+
+| Item                         | Result                                                     |
+| ---------------------------- | ---------------------------------------------------------- |
+| Starting checkpoint          | `checkpoints/dior/diffdet_dior_after_3epochs.pth`          |
+| Training dataset             | `dior_trainval`                                            |
+| Evaluation dataset           | `dior_test`                                                |
+| Training iterations reported | 11,723 iterations completed by the loop                    |
+| Training time                | 1 hour, 17 minutes, 32 seconds                             |
+| Half-epoch checkpoint        | `outputs_dior_finetune_after3_one_epoch/model_0005861.pth` |
+| One-epoch checkpoint         | `outputs_dior_finetune_after3_one_epoch/model_0011723.pth` |
+| Final checkpoint             | `outputs_dior_finetune_after3_one_epoch/model_final.pth`   |
+
+Pasted text(20261027-065547).txt
+
+## 5. Interpretation
+
+- Best overall checkpoint: one epoch, with mAP increasing from 44.9629 to 45.4766.
+- Largest class improvements: Expressway-Service-area (+4.506 AP), Baseballfield (+3.030), Harbor (+2.790), and Airplane (+2.544).
+- Largest declines: Windmill (−4.816), Airport (−3.259), Golffield (−1.958), and Groundtrackfield (−1.551).
+- Object-size trend: small- and medium-object AP improve by approximately 1.05 points each; large-object AP changes very little.
+
+The one-epoch checkpoint is the stronger choice based on overall AP, but performance is not uniformly better across all 20 classes. These results compare the two checkpoints on the same test set; they do not establish statistical significance.
+
+The results are done
+
+
+I...
+Loading and preparing results...
+DONE (t=4.49s)
+creating index...
+index created!
+[10/27 06:21:08 d2.evaluation.fast_eval_api]: Evaluate annotation type *bbox*
+[10/27 06:21:18 d2.evaluation.fast_eval_api]: COCOeval_opt.evaluate() finished in 9.78 seconds.
+[10/27 06:21:18 d2.evaluation.fast_eval_api]: Accumulating evaluation results...
+[10/27 06:21:22 d2.evaluation.fast_eval_api]: COCOeval_opt.accumulate() finished in 3.93 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.450
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.671
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.481
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.108
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.356
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.642
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.288
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.515
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.571
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.227
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.502
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.752
+[10/27 06:21:22 d2.evaluation.coco_evaluation]: Evaluation results for bbox:
+|   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| 44.963 | 67.071 | 48.116 | 10.797 | 35.596 | 64.211 |
+[10/27 06:21:22 d2.evaluation.coco_evaluation]: Per-category bbox AP:
+| category                | AP     | category                | AP     | category        | AP     |
+|:------------------------|:-------|:------------------------|:-------|:----------------|:-------|
+| Expressway-Service-area | 45.095 | Expressway-toll-station | 44.885 | airplane        | 50.054 |
+| airport                 | 54.584 | baseballfield           | 60.459 | basketballcourt | 67.100 |
+| bridge                  | 17.859 | chimney                 | 59.377 | dam             | 32.461 |
+| golffield               | 49.583 | groundtrackfield        | 60.766 | harbor          | 27.960 |
+| overpass                | 30.339 | ship                    | 44.524 | stadium         | 56.798 |
+| storagetank             | 40.704 | tenniscourt             | 69.715 | trainstation    | 22.594 |
+| vehicle                 | 27.400 | windmill                | 37.000 |                 |        |
+[10/27 06:21:23 d2.engine.defaults]: Evaluation results for dior_test in csv format:
+[10/27 06:21:23 d2.evaluation.testing]: copypaste: Task: bbox
+[10/27 06:21:23 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+[10/27 06:21:23 d2.evaluation.testing]: copypaste: 44.9629,67.0710,48.1157,10.7966,35.5957,64.2107
+
+
+Checkpoints:
+-rw-r--r-- 1 rishant_mallick rishant_mallick 423M Oct 27 05:15 outputs_dior_finetune_after3_one_epoch/model_0005861.pth
+-rw-r--r-- 1 rishant_mallick rishant_mallick 423M Oct 27 05:53 outputs_dior_finetune_after3_one_epoch/model_0011723.pth
+
+Evaluation logs:
+evaluation_dior_after3_one_epoch/half_epoch.log
+evaluation_dior_after3_one_epoch/one_epoch.log
+
+Search for AP metrics:
+evaluation_dior_after3_one_epoch/half_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.450
+evaluation_dior_after3_one_epoch/half_epoch.log: Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.671
+evaluation_dior_after3_one_epoch/half_epoch.log: Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.481
+evaluation_dior_after3_one_epoch/half_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.108
+evaluation_dior_after3_one_epoch/half_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.356
+evaluation_dior_after3_one_epoch/half_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.642
+evaluation_dior_after3_one_epoch/half_epoch.log:|   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
+evaluation_dior_after3_one_epoch/half_epoch.log:[10/27 06:21:23 d2.evaluation.testing]: copypaste: Task: bbox
+evaluation_dior_after3_one_epoch/half_epoch.log:[10/27 06:21:23 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+evaluation_dior_after3_one_epoch/half_epoch.log:[10/27 06:21:23 d2.evaluation.testing]: copypaste: 44.9629,67.0710,48.1157,10.7966,35.5957,64.2107
+evaluation_dior_after3_one_epoch/one_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.455
+evaluation_dior_after3_one_epoch/one_epoch.log: Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.675
+evaluation_dior_after3_one_epoch/one_epoch.log: Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.488
+evaluation_dior_after3_one_epoch/one_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.118
+evaluation_dior_after3_one_epoch/one_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.366
+evaluation_dior_after3_one_epoch/one_epoch.log: Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.642
+evaluation_dior_after3_one_epoch/one_epoch.log:|   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
+evaluation_dior_after3_one_epoch/one_epoch.log:[10/27 06:48:42 d2.evaluation.testing]: copypaste: Task: bbox
+evaluation_dior_after3_one_epoch/one_epoch.log:[10/27 06:48:42 d2.evaluation.testing]: copypaste: AP,AP50,AP75,APs,APm,APl
+evaluation_dior_after3_one_epoch/one_epoch.log:[10/27 06:48:42 d2.evaluation.testing]: copypaste: 45.4766,67.5089,48.8293,11.8474,36.6478,64.2336
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$
+(.venv) rishant_mallick@LAPTOP-PE586L8O:~/ai4rs/diffusiondet/repo$ I...
+

@@ -1,0 +1,728 @@
+GSDet DIOR-R INFERENCE EVALUATION REPORT
+
+1. EXPERIMENT SUMMARY
+
+Task : Oriented object detection on DIOR-R Model : GSDet baseline
+Evaluation mode : Inference only; no training/fine-tuning performed
+Checkpoint : checkpoints/epoch_24.pth Configuration :
+projects/GSDet_baseline/configs/GSDet_r50_b900_h2h4_h2r1_r2r1_2x_dior.py
+Work directory : work_dirs/dior_r_full_iou_eval Evaluation date : 15
+October 2026 Evaluation status : Completed successfully
+
+2. SOFTWARE AND HARDWARE ENVIRONMENT
+
+Operating environment : WSL Ubuntu / Linux Python : 3.10.22 PyTorch :
+2.4.0+cu121 MMEngine : 0.10.7 GPU : NVIDIA GeForce RTX 3050 Laptop GPU
+(4 GB) CUDA version reported : 12.1
+
+3. DATASET AND EVALUATION SETUP
+
+Dataset : DIOR-R Dataset type : DIORDataset Dataset root : data/DIOR
+Test list : ImageSets/Main/test.txt Image directory : JPEGImages-test
+Images evaluated : 11,738 Input resize : (800, 800), keep_ratio=True
+Ground-truth format : Quadrilateral boxes (qbox), converted to rotated
+boxes (rbox) Rotated box angle : le90 Evaluator : DOTAMetric Evaluation
+metric : mAP IoU thresholds : 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80,
+0.85, 0.90, 0.95 Inference batch size : 1 Number of classes : 20
+
+4. MODEL BACKBONE AND ARCHITECTURE
+
+Backbone type : mmdet.ResNet Backbone depth : 50 (ResNet-50) Backbone
+variant : Standard ResNet-50; the config does NOT specify
+rotation-equivariant ReR50 Neck : Feature Pyramid Network (FPN) FPN
+output channels : 256 FPN output levels : 5 Proposal count : 900
+Proposal/head family : GSDet with Hbox2Hbox, Hbox2Rbox and Rbox2Rbox
+stages Decoder stages : 2 Stage 1 : Hbox2RboxLayer Stage 2 :
+Rbox2RboxLayer Number of classes : 20 Angle convention : le90 Rotated
+NMS : nms_rotated Rotated NMS IoU : 0.6 Maximum detections : 900 per
+image
+
+5. CONFIGURED TRAINING HYPERPARAMETERS
+
+IMPORTANT: These are values recorded in the model config/checkpoint
+setup. This evaluation did not train the model; they are listed for
+reproducibility.
+
+Optimizer : AdamW Learning rate : 2.5e-5 Weight decay : 1e-4 Gradient
+clipping : max_norm=1.0 Training epochs : 24 LR scheduler : MultiStepLR
+LR milestones : [16, 22] LR decay gamma : 0.1 Configured train batch
+size: 2 Inference batch size : 1 Gradient accumulation : Not specified
+in the inspected config Mixed precision : Not asserted here; not listed
+as a confirmed setting in this report
+
+6. FINAL AGGREGATE RESULTS — AP AT EVERY IoU
+
+The following values are copied from the final evaluator logger line. AP
+is expressed as a percentage.
+
+  IoU threshold   AP
+  --------------- --------
+  0.50            69.70%
+  0.55            67.00%
+  0.60            63.40%
+  0.65            59.40%
+  0.70            54.00%
+  0.75            48.10%
+  0.80            41.00%
+  0.85            31.70%
+  0.90            21.00%
+  0.95            7.10%
+
+mAP (mean AP over the ten thresholds 0.50:0.05:0.95): 46.23%
+
+Exact final logger values: dota/mAP: 0.4623 dota/AP50: 0.6970 dota/AP55:
+0.6700 dota/AP60: 0.6340 dota/AP65: 0.5940 dota/AP70: 0.5400 dota/AP75:
+0.4810 dota/AP80: 0.4100 dota/AP85: 0.3170 dota/AP90: 0.2100 dota/AP95:
+0.0710
+
+7. PER-CLASS RESULTS AT IoU 0.50
+
+PER-CLASS RESULTS AT IoU = 0.50 Class GTs Detections Recall AP
+——————————————————————– airplane 8212 145543 0.89162 0.78406 airport 666
+93250 0.94144 0.59614 baseballfield 3434 115701 0.88614 0.76765
+basketballcourt 2146 256829 0.94129 0.87308 bridge 2589 506941 0.76632
+0.48940 chimney 1031 128011 0.86324 0.76829 expressway-service-area 1085
+86303 0.95484 0.86707 expressway-toll-station 688 133268 0.85465 0.71768
+dam 538 122716 0.94238 0.44669 golffield 575 118863 0.93739 0.76798
+groundtrackfield 1885 115526 0.96870 0.80038 harbor 3105 211508 0.69147
+0.40856 overpass 1782 210607 0.80022 0.60300 ship 35186 179119 0.90141
+0.83058 stadium 672 57921 0.97024 0.76876 storagetank 23361 235660
+0.80562 0.73167 tenniscourt 7343 139787 0.92006 0.86851 trainstation 509
+74810 0.92731 0.58053 vehicle 26640 870889 0.70236 0.55642 windmill 2998
+118283 0.88726 0.70935 ——————————————————————– Number of classes: 20
+
+8. PER-CLASS RESULTS AT IoU 0.75
+
+PER-CLASS RESULTS AT IoU = 0.75 Class GTs Detections Recall AP
+——————————————————————– airplane 8212 145543 0.65380 0.58672 airport 666
+93250 0.44745 0.16525 baseballfield 3434 115701 0.74752 0.63307
+basketballcourt 2146 256829 0.87884 0.79446 bridge 2589 506941 0.35226
+0.23194 chimney 1031 128011 0.75558 0.69640 expressway-service-area 1085
+86303 0.72442 0.55954 expressway-toll-station 688 133268 0.68023 0.59729
+dam 538 122716 0.41264 0.15261 golffield 575 118863 0.65739 0.46395
+groundtrackfield 1885 115526 0.88859 0.71742 harbor 3105 211508 0.36490
+0.22294 overpass 1782 210607 0.51291 0.39460 ship 35186 179119 0.79105
+0.68629 stadium 672 57921 0.74702 0.55901 storagetank 23361 235660
+0.62082 0.53406 tenniscourt 7343 139787 0.85224 0.79898 trainstation 509
+74810 0.56778 0.27585 vehicle 26640 870889 0.39921 0.30446 windmill 2998
+118283 0.43929 0.24202 ——————————————————————– Number of classes: 20
+
+9. COMPARISON WITH THE REPOSITORY’S PUBLISHED BENCHMARK
+
+  Metric                Local run   Published run
+  --------------------- ----------- ---------------
+  mAP (IoU 0.50:0.95)   46.23%      46.34%
+  AP50                  69.70%      69.80%
+  AP75                  48.10%      48.16%
+
+Absolute differences: mAP : 0.11 percentage points AP50 : 0.10
+percentage points AP75 : 0.06 percentage points
+
+The local results are very close to the published figures. However, the
+repository’s published log evaluated 2,935 images, while this local run
+evaluated 11,738 images. Therefore, this is a successful local
+evaluation, but not an exact reproduction on the same test subset.
+
+10. INFERENCE COMMAND USED
+
+python tools/test.py
+projects/GSDet_baseline/configs/GSDet_r50_b900_h2h4_h2r1_r2r1_2x_dior.py
+checkpoints/epoch_24.pth
+–work-dir work_dirs/dior_r_full_iou_eval
+–cfg-options
+test_dataloader.dataset.data_root=“$PWD/data/DIOR”
+test_dataloader.batch_size=1
+test_evaluator.iou_thrs=‘[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]’
+
+11. INTERPRETATION AND CAVEATS
+
+1.  The checkpoint loaded and inference completed on all 11,738 test
+    images.
+2.  This was inference-only; no training or fine-tuning occurred.
+3.  The evaluator used ten IoU thresholds from 0.50 to 0.95, with step
+    0.05.
+4.  The earlier mAP around 59.05% represented averaging AP50 and AP75
+    only; it is not the standard ten-threshold mAP used by the
+    repository benchmark.
+5.  To reproduce the repository result exactly, the same 2,935 image IDs
+    and corresponding annotations must be used.
+6.  Non-fatal warnings appeared in the log, but the run completed and
+    printed final metrics.
+7.  The logger reported an average iteration time around 0.213 seconds.
+    This is the per-iteration logger figure, not a separately measured
+    end-to-end latency benchmark.
+
+CONCLUSION
+
+GSDet inference completed successfully on the local DIOR-R test list of
+11,738 images. The model uses a standard ResNet-50 backbone with an FPN
+and a two-stage horizontal-to-rotated box refinement architecture. Using
+IoU thresholds 0.50 through 0.95, the reported mAP is 46.23%, AP50 is
+69.70%, and AP75 is 48.10%. All ten threshold-specific AP values and the
+main architecture/configuration hyperparameters are documented above.
+
+
+FULL PER-CLASS INTERMEDIATE EVALUATION TABLES
+============================================
+
+The following are the class-wise tables emitted by MMDetection's DOTAMetric during evaluation. Each table includes ground-truth count (gts), total detections (dets), recall, and AP for that specific IoU threshold. These are the intermediate per-threshold results, not only the final rounded summary.
+
+
+IoU threshold = 0.5
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.89162 | 0.78406 |
+| airport                 | 666   | 93250  | 0.94144 | 0.59614 |
+| baseballfield           | 3434  | 115701 | 0.88614 | 0.76765 |
+| basketballcourt         | 2146  | 256829 | 0.94129 | 0.87308 |
+| bridge                  | 2589  | 506941 | 0.76632 | 0.48940 |
+| chimney                 | 1031  | 128011 | 0.86324 | 0.76829 |
+| expressway-service-area | 1085  | 86303  | 0.95484 | 0.86707 |
+| expressway-toll-station | 688   | 133268 | 0.85465 | 0.71768 |
+| dam                     | 538   | 122716 | 0.94238 | 0.44669 |
+| golffield               | 575   | 118863 | 0.93739 | 0.76798 |
+| groundtrackfield        | 1885  | 115526 | 0.96870 | 0.80038 |
+| harbor                  | 3105  | 211508 | 0.69147 | 0.40856 |
+| overpass                | 1782  | 210607 | 0.80022 | 0.60300 |
+| ship                    | 35186 | 179119 | 0.90141 | 0.83058 |
+| stadium                 | 672   | 57921  | 0.97024 | 0.76876 |
+| storagetank             | 23361 | 235660 | 0.80562 | 0.73167 |
+| tenniscourt             | 7343  | 139787 | 0.92006 | 0.86851 |
+| trainstation            | 509   | 74810  | 0.92731 | 0.58053 |
+| vehicle                 | 26640 | 870889 | 0.70236 | 0.55642 |
+| windmill                | 2998  | 118283 | 0.88726 | 0.70935 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.69679 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.55
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.86824 | 0.77289 |
+| airport                 | 666   | 93250  | 0.90390 | 0.53631 |
+| baseballfield           | 3434  | 115701 | 0.87973 | 0.76412 |
+| basketballcourt         | 2146  | 256829 | 0.93616 | 0.86425 |
+| bridge                  | 2589  | 506941 | 0.71070 | 0.44593 |
+| chimney                 | 1031  | 128011 | 0.85354 | 0.75981 |
+| expressway-service-area | 1085  | 86303  | 0.94378 | 0.83985 |
+| expressway-toll-station | 688   | 133268 | 0.84302 | 0.70331 |
+| dam                     | 538   | 122716 | 0.90892 | 0.38607 |
+| golffield               | 575   | 118863 | 0.92174 | 0.73198 |
+| groundtrackfield        | 1885  | 115526 | 0.96180 | 0.79628 |
+| harbor                  | 3105  | 211508 | 0.64895 | 0.38083 |
+| overpass                | 1782  | 210607 | 0.76207 | 0.57804 |
+| ship                    | 35186 | 179119 | 0.89425 | 0.80423 |
+| stadium                 | 672   | 57921  | 0.95982 | 0.75957 |
+| storagetank             | 23361 | 235660 | 0.79170 | 0.69225 |
+| tenniscourt             | 7343  | 139787 | 0.91366 | 0.85891 |
+| trainstation            | 509   | 74810  | 0.90373 | 0.54849 |
+| vehicle                 | 26640 | 870889 | 0.66922 | 0.53468 |
+| windmill                | 2998  | 118283 | 0.83389 | 0.63544 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.66966 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.6
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.83646 | 0.75106 |
+| airport                 | 666   | 93250  | 0.84535 | 0.45332 |
+| baseballfield           | 3434  | 115701 | 0.86692 | 0.75599 |
+| basketballcourt         | 2146  | 256829 | 0.92917 | 0.85176 |
+| bridge                  | 2589  | 506941 | 0.64465 | 0.40456 |
+| chimney                 | 1031  | 128011 | 0.83317 | 0.74445 |
+| expressway-service-area | 1085  | 86303  | 0.92442 | 0.78344 |
+| expressway-toll-station | 688   | 133268 | 0.80814 | 0.68989 |
+| dam                     | 538   | 122716 | 0.85130 | 0.32458 |
+| golffield               | 575   | 118863 | 0.88696 | 0.68072 |
+| groundtrackfield        | 1885  | 115526 | 0.95279 | 0.78858 |
+| harbor                  | 3105  | 211508 | 0.59195 | 0.33855 |
+| overpass                | 1782  | 210607 | 0.70370 | 0.53117 |
+| ship                    | 35186 | 179119 | 0.88481 | 0.80145 |
+| stadium                 | 672   | 57921  | 0.92708 | 0.73212 |
+| storagetank             | 23361 | 235660 | 0.76949 | 0.68041 |
+| tenniscourt             | 7343  | 139787 | 0.90413 | 0.83276 |
+| trainstation            | 509   | 74810  | 0.87230 | 0.49902 |
+| vehicle                 | 26640 | 870889 | 0.62519 | 0.50050 |
+| windmill                | 2998  | 118283 | 0.76217 | 0.54242 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.63434 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.65
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.78885 | 0.69306 |
+| airport                 | 666   | 93250  | 0.75075 | 0.36405 |
+| baseballfield           | 3434  | 115701 | 0.84566 | 0.73914 |
+| basketballcourt         | 2146  | 256829 | 0.91612 | 0.82174 |
+| bridge                  | 2589  | 506941 | 0.55736 | 0.35153 |
+| chimney                 | 1031  | 128011 | 0.81474 | 0.72511 |
+| expressway-service-area | 1085  | 86303  | 0.88664 | 0.75003 |
+| expressway-toll-station | 688   | 133268 | 0.77471 | 0.67180 |
+| dam                     | 538   | 122716 | 0.76952 | 0.27550 |
+| golffield               | 575   | 118863 | 0.82783 | 0.60904 |
+| groundtrackfield        | 1885  | 115526 | 0.94164 | 0.77711 |
+| harbor                  | 3105  | 211508 | 0.53011 | 0.30178 |
+| overpass                | 1782  | 210607 | 0.64703 | 0.49167 |
+| ship                    | 35186 | 179119 | 0.86912 | 0.79559 |
+| stadium                 | 672   | 57921  | 0.89137 | 0.68773 |
+| storagetank             | 23361 | 235660 | 0.73529 | 0.65793 |
+| tenniscourt             | 7343  | 139787 | 0.89255 | 0.80767 |
+| trainstation            | 509   | 74810  | 0.81532 | 0.44606 |
+| vehicle                 | 26640 | 870889 | 0.56742 | 0.45610 |
+| windmill                | 2998  | 118283 | 0.67345 | 0.44832 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.59355 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.7
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.72735 | 0.65667 |
+| airport                 | 666   | 93250  | 0.61411 | 0.26360 |
+| baseballfield           | 3434  | 115701 | 0.80285 | 0.67072 |
+| basketballcourt         | 2146  | 256829 | 0.90075 | 0.80067 |
+| bridge                  | 2589  | 506941 | 0.46080 | 0.29210 |
+| chimney                 | 1031  | 128011 | 0.79340 | 0.70512 |
+| expressway-service-area | 1085  | 86303  | 0.82396 | 0.67458 |
+| expressway-toll-station | 688   | 133268 | 0.72820 | 0.61579 |
+| dam                     | 538   | 122716 | 0.62639 | 0.21761 |
+| golffield               | 575   | 118863 | 0.75130 | 0.52851 |
+| groundtrackfield        | 1885  | 115526 | 0.91830 | 0.74195 |
+| harbor                  | 3105  | 211508 | 0.45346 | 0.26138 |
+| overpass                | 1782  | 210607 | 0.58193 | 0.44205 |
+| ship                    | 35186 | 179119 | 0.84116 | 0.78265 |
+| stadium                 | 672   | 57921  | 0.83780 | 0.63277 |
+| storagetank             | 23361 | 235660 | 0.68683 | 0.57716 |
+| tenniscourt             | 7343  | 139787 | 0.87526 | 0.80488 |
+| trainstation            | 509   | 74810  | 0.73084 | 0.37988 |
+| vehicle                 | 26640 | 870889 | 0.49306 | 0.39039 |
+| windmill                | 2998  | 118283 | 0.56237 | 0.35633 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.53974 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.75
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.65380 | 0.58672 |
+| airport                 | 666   | 93250  | 0.44745 | 0.16525 |
+| baseballfield           | 3434  | 115701 | 0.74752 | 0.63307 |
+| basketballcourt         | 2146  | 256829 | 0.87884 | 0.79446 |
+| bridge                  | 2589  | 506941 | 0.35226 | 0.23194 |
+| chimney                 | 1031  | 128011 | 0.75558 | 0.69640 |
+| expressway-service-area | 1085  | 86303  | 0.72442 | 0.55954 |
+| expressway-toll-station | 688   | 133268 | 0.68023 | 0.59729 |
+| dam                     | 538   | 122716 | 0.41264 | 0.15261 |
+| golffield               | 575   | 118863 | 0.65739 | 0.46395 |
+| groundtrackfield        | 1885  | 115526 | 0.88859 | 0.71742 |
+| harbor                  | 3105  | 211508 | 0.36490 | 0.22294 |
+| overpass                | 1782  | 210607 | 0.51291 | 0.39460 |
+| ship                    | 35186 | 179119 | 0.79105 | 0.68629 |
+| stadium                 | 672   | 57921  | 0.74702 | 0.55901 |
+| storagetank             | 23361 | 235660 | 0.62082 | 0.53406 |
+| tenniscourt             | 7343  | 139787 | 0.85224 | 0.79898 |
+| trainstation            | 509   | 74810  | 0.56778 | 0.27585 |
+| vehicle                 | 26640 | 870889 | 0.39921 | 0.30446 |
+| windmill                | 2998  | 118283 | 0.43929 | 0.24202 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.48084 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.8
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.55943 | 0.48513 |
+| airport                 | 666   | 93250  | 0.27477 | 0.10885 |
+| baseballfield           | 3434  | 115701 | 0.68695 | 0.55973 |
+| basketballcourt         | 2146  | 256829 | 0.85741 | 0.78363 |
+| bridge                  | 2589  | 506941 | 0.26458 | 0.18395 |
+| chimney                 | 1031  | 128011 | 0.72357 | 0.66690 |
+| expressway-service-area | 1085  | 86303  | 0.56406 | 0.38936 |
+| expressway-toll-station | 688   | 133268 | 0.60029 | 0.51961 |
+| dam                     | 538   | 122716 | 0.25651 | 0.08070 |
+| golffield               | 575   | 118863 | 0.58957 | 0.40766 |
+| groundtrackfield        | 1885  | 115526 | 0.81857 | 0.65350 |
+| harbor                  | 3105  | 211508 | 0.26892 | 0.17652 |
+| overpass                | 1782  | 210607 | 0.43883 | 0.33456 |
+| ship                    | 35186 | 179119 | 0.69278 | 0.55900 |
+| stadium                 | 672   | 57921  | 0.64137 | 0.47436 |
+| storagetank             | 23361 | 235660 | 0.52746 | 0.43956 |
+| tenniscourt             | 7343  | 139787 | 0.82119 | 0.78488 |
+| trainstation            | 509   | 74810  | 0.45972 | 0.23016 |
+| vehicle                 | 26640 | 870889 | 0.29737 | 0.21628 |
+| windmill                | 2998  | 118283 | 0.31821 | 0.15286 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.41036 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.85
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.43643 | 0.36454 |
+| airport                 | 666   | 93250  | 0.14865 | 0.07926 |
+| baseballfield           | 3434  | 115701 | 0.61008 | 0.47811 |
+| basketballcourt         | 2146  | 256829 | 0.81128 | 0.71842 |
+| bridge                  | 2589  | 506941 | 0.18038 | 0.13492 |
+| chimney                 | 1031  | 128011 | 0.67701 | 0.59107 |
+| expressway-service-area | 1085  | 86303  | 0.35853 | 0.19660 |
+| expressway-toll-station | 688   | 133268 | 0.50436 | 0.43637 |
+| dam                     | 538   | 122716 | 0.11896 | 0.03182 |
+| golffield               | 575   | 118863 | 0.53739 | 0.36951 |
+| groundtrackfield        | 1885  | 115526 | 0.70345 | 0.51904 |
+| harbor                  | 3105  | 211508 | 0.18035 | 0.13131 |
+| overpass                | 1782  | 210607 | 0.32548 | 0.21849 |
+| ship                    | 35186 | 179119 | 0.51057 | 0.38652 |
+| stadium                 | 672   | 57921  | 0.51488 | 0.33385 |
+| storagetank             | 23361 | 235660 | 0.40131 | 0.31099 |
+| tenniscourt             | 7343  | 139787 | 0.77843 | 0.69776 |
+| trainstation            | 509   | 74810  | 0.32613 | 0.12925 |
+| vehicle                 | 26640 | 870889 | 0.18724 | 0.13089 |
+| windmill                | 2998  | 118283 | 0.20080 | 0.07977 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.31692 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.9
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.25195 | 0.17957 |
+| airport                 | 666   | 93250  | 0.04354 | 0.02273 |
+| baseballfield           | 3434  | 115701 | 0.49039 | 0.31812 |
+| basketballcourt         | 2146  | 256829 | 0.73952 | 0.64647 |
+| bridge                  | 2589  | 506941 | 0.11047 | 0.10277 |
+| chimney                 | 1031  | 128011 | 0.54510 | 0.44463 |
+| expressway-service-area | 1085  | 86303  | 0.13180 | 0.04317 |
+| expressway-toll-station | 688   | 133268 | 0.37209 | 0.31178 |
+| dam                     | 538   | 122716 | 0.04647 | 0.03030 |
+| golffield               | 575   | 118863 | 0.41913 | 0.25388 |
+| groundtrackfield        | 1885  | 115526 | 0.50981 | 0.36059 |
+| harbor                  | 3105  | 211508 | 0.08792 | 0.09091 |
+| overpass                | 1782  | 210607 | 0.19360 | 0.08982 |
+| ship                    | 35186 | 179119 | 0.24569 | 0.15175 |
+| stadium                 | 672   | 57921  | 0.30208 | 0.13920 |
+| storagetank             | 23361 | 235660 | 0.24288 | 0.19069 |
+| tenniscourt             | 7343  | 139787 | 0.72273 | 0.67222 |
+| trainstation            | 509   | 74810  | 0.19057 | 0.06796 |
+| vehicle                 | 26640 | 870889 | 0.08041 | 0.04545 |
+| windmill                | 2998  | 118283 | 0.09039 | 0.03326 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.20976 |
++-------------------------+-------+--------+---------+---------+
+
+
+IoU threshold = 0.95
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.04932 | 0.04545 |
+| airport                 | 666   | 93250  | 0.00450 | 0.00313 |
+| baseballfield           | 3434  | 115701 | 0.21695 | 0.08863 |
+| basketballcourt         | 2146  | 256829 | 0.46645 | 0.28013 |
+| bridge                  | 2589  | 506941 | 0.02511 | 0.01357 |
+| chimney                 | 1031  | 128011 | 0.23375 | 0.10581 |
+| expressway-service-area | 1085  | 86303  | 0.00829 | 0.00433 |
+| expressway-toll-station | 688   | 133268 | 0.11628 | 0.06186 |
+| dam                     | 538   | 122716 | 0.00000 | 0.00000 |
+| golffield               | 575   | 118863 | 0.17565 | 0.05345 |
+| groundtrackfield        | 1885  | 115526 | 0.24615 | 0.15974 |
+| harbor                  | 3105  | 211508 | 0.01256 | 0.01136 |
+| overpass                | 1782  | 210607 | 0.05668 | 0.01540 |
+| ship                    | 35186 | 179119 | 0.03285 | 0.00791 |
+| stadium                 | 672   | 57921  | 0.08036 | 0.02273 |
+| storagetank             | 23361 | 235660 | 0.07298 | 0.09091 |
+| tenniscourt             | 7343  | 139787 | 0.54092 | 0.41506 |
+| trainstation            | 509   | 74810  | 0.05501 | 0.01515 |
+| vehicle                 | 26640 | 870889 | 0.01149 | 0.01240 |
+| windmill                | 2998  | 118283 | 0.01201 | 0.00404 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.07055 |
++-------------------------+-------+--------+---------+---------+
+
+
+FINAL LOGGER SUMMARY (rounded)
+==============================
+Epoch(test) [11738/11738] dota/mAP: 0.4623, AP50: 0.6970, AP55: 0.6700, AP60: 0.6340, AP65: 0.5940, AP70: 0.5400, AP75: 0.4810, AP80: 0.4100, AP85: 0.3170, AP90: 0.2100, AP95: 0.0710.
+
+Note: the per-threshold table mAP values are the underlying values from the evaluator; the final logger line rounds the AP values and reports the aggregate mAP over the configured IoU thresholds.
+
+
+FULL PER-CLASS RESULTS AT EVERY IoU THRESHOLD (FROM THE ACTUAL EVALUATION LOG)
+
+IOU THRESHOLD = 0.55
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.86824 | 0.77289 |
+| airport                 | 666   | 93250  | 0.90390 | 0.53631 |
+| baseballfield           | 3434  | 115701 | 0.87973 | 0.76412 |
+| basketballcourt         | 2146  | 256829 | 0.93616 | 0.86425 |
+| bridge                  | 2589  | 506941 | 0.71070 | 0.44593 |
+| chimney                 | 1031  | 128011 | 0.85354 | 0.75981 |
+| expressway-service-area | 1085  | 86303  | 0.94378 | 0.83985 |
+| expressway-toll-station | 688   | 133268 | 0.84302 | 0.70331 |
+| dam                     | 538   | 122716 | 0.90892 | 0.38607 |
+| golffield               | 575   | 118863 | 0.92174 | 0.73198 |
+| groundtrackfield        | 1885  | 115526 | 0.96180 | 0.79628 |
+| harbor                  | 3105  | 211508 | 0.64895 | 0.38083 |
+| overpass                | 1782  | 210607 | 0.76207 | 0.57804 |
+| ship                    | 35186 | 179119 | 0.89425 | 0.80423 |
+| stadium                 | 672   | 57921  | 0.95982 | 0.75957 |
+| storagetank             | 23361 | 235660 | 0.79170 | 0.69225 |
+| tenniscourt             | 7343  | 139787 | 0.91366 | 0.85891 |
+| trainstation            | 509   | 74810  | 0.90373 | 0.54849 |
+| vehicle                 | 26640 | 870889 | 0.66922 | 0.53468 |
+| windmill                | 2998  | 118283 | 0.83389 | 0.63544 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.66966 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.60
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.83646 | 0.75106 |
+| airport                 | 666   | 93250  | 0.84535 | 0.45332 |
+| baseballfield           | 3434  | 115701 | 0.86692 | 0.75599 |
+| basketballcourt         | 2146  | 256829 | 0.92917 | 0.85176 |
+| bridge                  | 2589  | 506941 | 0.64465 | 0.40456 |
+| chimney                 | 1031  | 128011 | 0.83317 | 0.74445 |
+| expressway-service-area | 1085  | 86303  | 0.92442 | 0.78344 |
+| expressway-toll-station | 688   | 133268 | 0.80814 | 0.68989 |
+| dam                     | 538   | 122716 | 0.85130 | 0.32458 |
+| golffield               | 575   | 118863 | 0.88696 | 0.68072 |
+| groundtrackfield        | 1885  | 115526 | 0.95279 | 0.78858 |
+| harbor                  | 3105  | 211508 | 0.59195 | 0.33855 |
+| overpass                | 1782  | 210607 | 0.70370 | 0.53117 |
+| ship                    | 35186 | 179119 | 0.88481 | 0.80145 |
+| stadium                 | 672   | 57921  | 0.92708 | 0.73212 |
+| storagetank             | 23361 | 235660 | 0.76949 | 0.68041 |
+| tenniscourt             | 7343  | 139787 | 0.90413 | 0.83276 |
+| trainstation            | 509   | 74810  | 0.87230 | 0.49902 |
+| vehicle                 | 26640 | 870889 | 0.62519 | 0.50050 |
+| windmill                | 2998  | 118283 | 0.76217 | 0.54242 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.63434 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.65
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.78885 | 0.69306 |
+| airport                 | 666   | 93250  | 0.75075 | 0.36405 |
+| baseballfield           | 3434  | 115701 | 0.84566 | 0.73914 |
+| basketballcourt         | 2146  | 256829 | 0.91612 | 0.82174 |
+| bridge                  | 2589  | 506941 | 0.55736 | 0.35153 |
+| chimney                 | 1031  | 128011 | 0.81474 | 0.72511 |
+| expressway-service-area | 1085  | 86303  | 0.88664 | 0.75003 |
+| expressway-toll-station | 688   | 133268 | 0.77471 | 0.67180 |
+| dam                     | 538   | 122716 | 0.76952 | 0.27550 |
+| golffield               | 575   | 118863 | 0.82783 | 0.60904 |
+| groundtrackfield        | 1885  | 115526 | 0.94164 | 0.77711 |
+| harbor                  | 3105  | 211508 | 0.53011 | 0.30178 |
+| overpass                | 1782  | 210607 | 0.64703 | 0.49167 |
+| ship                    | 35186 | 179119 | 0.86912 | 0.79559 |
+| stadium                 | 672   | 57921  | 0.89137 | 0.68773 |
+| storagetank             | 23361 | 235660 | 0.73529 | 0.65793 |
+| tenniscourt             | 7343  | 139787 | 0.89255 | 0.80767 |
+| trainstation            | 509   | 74810  | 0.81532 | 0.44606 |
+| vehicle                 | 26640 | 870889 | 0.56742 | 0.45610 |
+| windmill                | 2998  | 118283 | 0.67345 | 0.44832 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.59355 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.70
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.72735 | 0.65667 |
+| airport                 | 666   | 93250  | 0.61411 | 0.26360 |
+| baseballfield           | 3434  | 115701 | 0.80285 | 0.67072 |
+| basketballcourt         | 2146  | 256829 | 0.90075 | 0.80067 |
+| bridge                  | 2589  | 506941 | 0.46080 | 0.29210 |
+| chimney                 | 1031  | 128011 | 0.79340 | 0.70512 |
+| expressway-service-area | 1085  | 86303  | 0.82396 | 0.67458 |
+| expressway-toll-station | 688   | 133268 | 0.72820 | 0.61579 |
+| dam                     | 538   | 122716 | 0.62639 | 0.21761 |
+| golffield               | 575   | 118863 | 0.75130 | 0.52851 |
+| groundtrackfield        | 1885  | 115526 | 0.91830 | 0.74195 |
+| harbor                  | 3105  | 211508 | 0.45346 | 0.26138 |
+| overpass                | 1782  | 210607 | 0.58193 | 0.44205 |
+| ship                    | 35186 | 179119 | 0.84116 | 0.78265 |
+| stadium                 | 672   | 57921  | 0.83780 | 0.63277 |
+| storagetank             | 23361 | 235660 | 0.68683 | 0.57716 |
+| tenniscourt             | 7343  | 139787 | 0.87526 | 0.80488 |
+| trainstation            | 509   | 74810  | 0.73084 | 0.37988 |
+| vehicle                 | 26640 | 870889 | 0.49306 | 0.39039 |
+| windmill                | 2998  | 118283 | 0.56237 | 0.35633 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.53974 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.75
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.65380 | 0.58672 |
+| airport                 | 666   | 93250  | 0.44745 | 0.16525 |
+| baseballfield           | 3434  | 115701 | 0.74752 | 0.63307 |
+| basketballcourt         | 2146  | 256829 | 0.87884 | 0.79446 |
+| bridge                  | 2589  | 506941 | 0.35226 | 0.23194 |
+| chimney                 | 1031  | 128011 | 0.75558 | 0.69640 |
+| expressway-service-area | 1085  | 86303  | 0.72442 | 0.55954 |
+| expressway-toll-station | 688   | 133268 | 0.68023 | 0.59729 |
+| dam                     | 538   | 122716 | 0.41264 | 0.15261 |
+| golffield               | 575   | 118863 | 0.65739 | 0.46395 |
+| groundtrackfield        | 1885  | 115526 | 0.88859 | 0.71742 |
+| harbor                  | 3105  | 211508 | 0.36490 | 0.22294 |
+| overpass                | 1782  | 210607 | 0.51291 | 0.39460 |
+| ship                    | 35186 | 179119 | 0.79105 | 0.68629 |
+| stadium                 | 672   | 57921  | 0.74702 | 0.55901 |
+| storagetank             | 23361 | 235660 | 0.62082 | 0.53406 |
+| tenniscourt             | 7343  | 139787 | 0.85224 | 0.79898 |
+| trainstation            | 509   | 74810  | 0.56778 | 0.27585 |
+| vehicle                 | 26640 | 870889 | 0.39921 | 0.30446 |
+| windmill                | 2998  | 118283 | 0.43929 | 0.24202 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.48084 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.80
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.55943 | 0.48513 |
+| airport                 | 666   | 93250  | 0.27477 | 0.10885 |
+| baseballfield           | 3434  | 115701 | 0.68695 | 0.55973 |
+| basketballcourt         | 2146  | 256829 | 0.85741 | 0.78363 |
+| bridge                  | 2589  | 506941 | 0.26458 | 0.18395 |
+| chimney                 | 1031  | 128011 | 0.72357 | 0.66690 |
+| expressway-service-area | 1085  | 86303  | 0.56406 | 0.38936 |
+| expressway-toll-station | 688   | 133268 | 0.60029 | 0.51961 |
+| dam                     | 538   | 122716 | 0.25651 | 0.08070 |
+| golffield               | 575   | 118863 | 0.58957 | 0.40766 |
+| groundtrackfield        | 1885  | 115526 | 0.81857 | 0.65350 |
+| harbor                  | 3105  | 211508 | 0.26892 | 0.17652 |
+| overpass                | 1782  | 210607 | 0.43883 | 0.33456 |
+| ship                    | 35186 | 179119 | 0.69278 | 0.55900 |
+| stadium                 | 672   | 57921  | 0.64137 | 0.47436 |
+| storagetank             | 23361 | 235660 | 0.52746 | 0.43956 |
+| tenniscourt             | 7343  | 139787 | 0.82119 | 0.78488 |
+| trainstation            | 509   | 74810  | 0.45972 | 0.23016 |
+| vehicle                 | 26640 | 870889 | 0.29737 | 0.21628 |
+| windmill                | 2998  | 118283 | 0.31821 | 0.15286 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.41036 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.85
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.43643 | 0.36454 |
+| airport                 | 666   | 93250  | 0.14865 | 0.07926 |
+| baseballfield           | 3434  | 115701 | 0.61008 | 0.47811 |
+| basketballcourt         | 2146  | 256829 | 0.81128 | 0.71842 |
+| bridge                  | 2589  | 506941 | 0.18038 | 0.13492 |
+| chimney                 | 1031  | 128011 | 0.67701 | 0.59107 |
+| expressway-service-area | 1085  | 86303  | 0.35853 | 0.19660 |
+| expressway-toll-station | 688   | 133268 | 0.50436 | 0.43637 |
+| dam                     | 538   | 122716 | 0.11896 | 0.03182 |
+| golffield               | 575   | 118863 | 0.53739 | 0.36951 |
+| groundtrackfield        | 1885  | 115526 | 0.70345 | 0.51904 |
+| harbor                  | 3105  | 211508 | 0.18035 | 0.13131 |
+| overpass                | 1782  | 210607 | 0.32548 | 0.21849 |
+| ship                    | 35186 | 179119 | 0.51057 | 0.38652 |
+| stadium                 | 672   | 57921  | 0.51488 | 0.33385 |
+| storagetank             | 23361 | 235660 | 0.40131 | 0.31099 |
+| tenniscourt             | 7343  | 139787 | 0.77843 | 0.69776 |
+| trainstation            | 509   | 74810  | 0.32613 | 0.12925 |
+| vehicle                 | 26640 | 870889 | 0.18724 | 0.13089 |
+| windmill                | 2998  | 118283 | 0.20080 | 0.07977 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.31692 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.90
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.25195 | 0.17957 |
+| airport                 | 666   | 93250  | 0.04354 | 0.02273 |
+| baseballfield           | 3434  | 115701 | 0.49039 | 0.31812 |
+| basketballcourt         | 2146  | 256829 | 0.73952 | 0.64647 |
+| bridge                  | 2589  | 506941 | 0.11047 | 0.10277 |
+| chimney                 | 1031  | 128011 | 0.54510 | 0.44463 |
+| expressway-service-area | 1085  | 86303  | 0.13180 | 0.04317 |
+| expressway-toll-station | 688   | 133268 | 0.37209 | 0.31178 |
+| dam                     | 538   | 122716 | 0.04647 | 0.03030 |
+| golffield               | 575   | 118863 | 0.41913 | 0.25388 |
+| groundtrackfield        | 1885  | 115526 | 0.50981 | 0.36059 |
+| harbor                  | 3105  | 211508 | 0.08792 | 0.09091 |
+| overpass                | 1782  | 210607 | 0.19360 | 0.08982 |
+| ship                    | 35186 | 179119 | 0.24569 | 0.15175 |
+| stadium                 | 672   | 57921  | 0.30208 | 0.13920 |
+| storagetank             | 23361 | 235660 | 0.24288 | 0.19069 |
+| tenniscourt             | 7343  | 139787 | 0.72273 | 0.67222 |
+| trainstation            | 509   | 74810  | 0.19057 | 0.06796 |
+| vehicle                 | 26640 | 870889 | 0.08041 | 0.04545 |
+| windmill                | 2998  | 118283 | 0.09039 | 0.03326 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.20976 |
++-------------------------+-------+--------+---------+---------+
+
+
+IOU THRESHOLD = 0.95
++-------------------------+-------+--------+---------+---------+
+| class                   | gts   | dets   | recall  | ap      |
++-------------------------+-------+--------+---------+---------+
+| airplane                | 8212  | 145543 | 0.04932 | 0.04545 |
+| airport                 | 666   | 93250  | 0.00450 | 0.00313 |
+| baseballfield           | 3434  | 115701 | 0.21695 | 0.08863 |
+| basketballcourt         | 2146  | 256829 | 0.46645 | 0.28013 |
+| bridge                  | 2589  | 506941 | 0.02511 | 0.01357 |
+| chimney                 | 1031  | 128011 | 0.23375 | 0.10581 |
+| expressway-service-area | 1085  | 86303  | 0.00829 | 0.00433 |
+| expressway-toll-station | 688   | 133268 | 0.11628 | 0.06186 |
+| dam                     | 538   | 122716 | 0.00000 | 0.00000 |
+| golffield               | 575   | 118863 | 0.17565 | 0.05345 |
+| groundtrackfield        | 1885  | 115526 | 0.24615 | 0.15974 |
+| harbor                  | 3105  | 211508 | 0.01256 | 0.01136 |
+| overpass                | 1782  | 210607 | 0.05668 | 0.01540 |
+| ship                    | 35186 | 179119 | 0.03285 | 0.00791 |
+| stadium                 | 672   | 57921  | 0.08036 | 0.02273 |
+| storagetank             | 23361 | 235660 | 0.07298 | 0.09091 |
+| tenniscourt             | 7343  | 139787 | 0.54092 | 0.41506 |
+| trainstation            | 509   | 74810  | 0.05501 | 0.01515 |
+| vehicle                 | 26640 | 870889 | 0.01149 | 0.01240 |
+| windmill                | 2998  | 118283 | 0.01201 | 0.00404 |
++-------------------------+-------+--------+---------+---------+
+| mAP                     |       |        |         | 0.07055 |
++-------------------------+-------+--------+---------+---------+
