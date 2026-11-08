@@ -1,5 +1,4 @@
 # BTP-Diffusion-Models
-# BTP-Diffusion-Models
 
 ### Diffusion-Based Object Detection for Aerial and Remote Sensing Images
 
